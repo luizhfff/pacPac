@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
+	<meta charset="utf-8">
+	<title>(: PacPac :)</title>
+	<audio id="audio"></audio>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet"
+	      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	      crossorigin="anonymous">
+</head>
 
-        <meta charset="utf-8">
-        <title>(: EatMan :)</title>
-        <audio id="audio"></audio>
-        <link rel="shortcut icon" href="favicon.ico">
-    </head>
-        
-    <body id="gameBody" onload="setup()" onkeydown="keyboardEventHandler(event)">
-        <canvas id="myCanvas" width="1200" height="800" style="border: 1px solid; float:left"></canvas>
-        <h2 style="font-family:sans-serif;font-size:200%;color:rgb(153, 7, 7);text-align:right; float:inherit">HUNGRY ?</h2>
-        <button id="clickPlay" onclick="play()"
-                style="background:darkred;color:white;border:thick;font-size:150%;cursor:pointer; float:right">CLICK TO PLAY !</button>
-        <br>
-        <br>
-        <br>
-        <p id="time" style="font-family:sans-serif;font-size:160%;color:rgb(153, 7, 7);text-align:right; float:inherit">Time: 30 seconds</p>
-        <br>
-        <br>
-        <br>
-        <p id="score" style="font-family:sans-serif;font-size:160%;color:rgb(153, 7, 7);text-align:right; float:inherit">SCORE = 0</p>
+<body id="gameBody">
+	<div class="container fluid">
+		<canvas id="myCanvas" width="1200" height="800"></canvas>
+		<h2 id="gameHeader">HUNGRY ?</h2>
+		<button id="clickPlay">PLAY !</button>
+		<br>
+		<br>
+		<br>
+		<p id="time">Time: 30 seconds</p>
+		<br>
+		<br>
+		<br>
+		<p id="score">SCORE = 0</p>
 
+	</div>
 
-        <script type='text/javascript' src="bundle.js"></script>
-    </body>
-
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	        crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	        crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	        crossorigin="anonymous"></script>
+	<script type='text/javascript' src="bundle.js"></script>
+</body>
 
 
 </html>
