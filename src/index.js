@@ -1,4 +1,15 @@
-"use strict";
+import lodash from 'lodash';
+import './style.css';
+import soundTrackAsset from './soundtrack.mp3';
+import coinSoundAsset from './coinsound.wav';
+import bombSoundAsset from './bombsound.mp3';
+import explosionAsset from './explosion2.wav';
+import backgroundAsset from './blue_dark_sky.png';
+import eatManAsset from './eatman.png';
+import bombAsset from './bomb2.png';
+import goldCoinAsset from './gold_coin3.png';
+import silverCoinAsset from './silver_coin2.png';
+import gameOverAsset from './gameover.png';
 
 //Global variables to be used on the game
 let ctx;
@@ -14,24 +25,36 @@ let eatManPositionX = 50;
 let eatManPositionY = 50;
 
 //Setting game sounds sources using constructor 
-let gameSound = new Sound("soundtrack.mp3");
-let coinSound = new Sound("coinsound.wav");
-let bombsound = new Sound("bombsound.mp3");
-let explosion2 = new Sound("explosion2.wav");
+let gameSound = new Sound(soundTrackAsset);
+let coinSound = new Sound(coinSoundAsset);
+let bombsound = new Sound(bombSoundAsset);
+let explosion2 = new Sound(explosionAsset);
 
 //Setting images sources
 let background = new Image();
-background.src = "blue_dark_sky.png"; //background
+background.src = backgroundAsset; //background
 let eatMan = new Image();
-eatMan.src = "eatman.png"; //eatMan character source
+eatMan.src = eatManAsset; //eatMan character source
 let bomb = new Image();
-bomb.src = "bomb2.png"; //bomb source
+bomb.src = bombAsset; //bomb source
 let goldCoin = new Image();
-goldCoin.src = "gold_coin3.png"; //gold coin source
+goldCoin.src = goldCoinAsset; //gold coin source
 let silverCoin = new Image();
-silverCoin.src = "silver_coin2.png"; //silver coin source
+silverCoin.src = silverCoinAsset; //silver coin source
 let gameOver = new Image();
-gameOver.src = "gameover.png"; //game over billboard source
+gameOver.src = gameOverAsset; //game over billboard source
+
+window.onload = () => {
+	setup();
+}
+
+document.getElementById('clickPlay').onclick = function () {
+	play();
+}
+
+document.getElementById('gameBody').onkeydown = function (event) {
+	keyboardEventHandler(event)
+}
 
 //Setup function to be called on page load
 function setup()    {
